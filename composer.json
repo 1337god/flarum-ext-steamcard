@@ -1,0 +1,24 @@
+{
+    "name": "beeta-dev/flarum-ext-webm",
+    "description": "Beeta Webm",
+    "type": "flarum-extension",
+    "authors": [{
+        "name": "blurkness",
+        "email": "blurkness@gmail.com"
+    }],
+    "require": {
+        "flarum/core": "^0.1.0-beta.4"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Beeta Webm",
+            "icon": {
+                "name": "video-camera",
+                "backgroundColor": "#14191F", 
+                "color": "#E7712E"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable" : true
+}
