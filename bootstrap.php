@@ -2,22 +2,18 @@
 use Flarum\Event\ConfigureFormatter;
 use Illuminate\Events\Dispatcher;
 
-function subscribe(Dispatcher $events)
+function subwebm(Dispatcher $events)
 {
 	$events->listen(
 		ConfigureFormatter::class,
 		function (ConfigureFormatter $event)
 		{
 			$event->configurator->BBCodes->addCustom(
-	            '[WEBM]{TEXT}[/WEBM]',
-	            '<div class="webm">{TEXT}</div>'
-        	);
-        	$event->configurator->BBCodes->addCustom(
-	            '[WEBM2]{TEXT}[/WEBM2]',
-	            '<div class="webm">{TEXT}</div>'
+	            '[WEBM]{URL;useContent}[/WEBM]',
+	            '<video controls autoplay loop muted poster="placeholder.jpg" id="backgroundgif"><source src="{URL}" type="video/webm"><source src="{URL}" type="video/mp4"></video>'
         	);
 		}
 	);
 };
 
-return __NAMESPACE__ . '\\subscribe';
+return __NAMESPACE__ . '\\subwebm';
