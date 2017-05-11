@@ -2,18 +2,18 @@
 use Flarum\Event\ConfigureFormatter;
 use Illuminate\Events\Dispatcher;
 
-function subwebm(Dispatcher $events)
+function substeam(Dispatcher $events)
 {
 	$events->listen(
 		ConfigureFormatter::class,
 		function (ConfigureFormatter $event)
 		{
 			$event->configurator->BBCodes->addCustom(
-	            '[WEBM]{URL;useContent}[/WEBM]',
-	            '<video controls autoplay loop muted poster="placeholder.jpg" id="backgroundgif"><source src="{URL}" type="video/webm"><source src="{URL}" type="video/mp4"></video>'
+	            '[SteamIDCard={URL}]{NUMBER}[/SteamIDCard]',
+	            '<a href="{URL}" target="_blank"><img src="http://steamsignature.com/card/0/{NUMBER}.png"></a>'
         	);
 		}
 	);
 };
 
-return __NAMESPACE__ . '\\subwebm';
+return __NAMESPACE__ . '\\substeam';
