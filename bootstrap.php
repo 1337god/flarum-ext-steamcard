@@ -1,9 +1,11 @@
 <?php
+
+namespace wrongthink\steamcard;
+
 use Flarum\Event\ConfigureFormatter;
 use Illuminate\Events\Dispatcher;
 
-function substeam(Dispatcher $events)
-{
+return function (Dispatcher $events) {
 	$events->listen(
 		ConfigureFormatter::class,
 		function (ConfigureFormatter $event)
@@ -15,5 +17,3 @@ function substeam(Dispatcher $events)
 		}
 	);
 };
-
-return __NAMESPACE__ . '\\substeam';
