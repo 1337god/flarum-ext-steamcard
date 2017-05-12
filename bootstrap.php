@@ -9,8 +9,8 @@ function substeam(Dispatcher $events)
 		function (ConfigureFormatter $event)
 		{
 			$event->configurator->BBCodes->addCustom(
-	            '[SteamIDCard={URL1;useContent}]{NUMBER1}[/SteamIDCard]',
-	            '<a href="{URL1}" target="_blank"><img src="http://steamsignature.com/card/0/{NUMBER1}.png"></a>'
+	            '[SteamIDCard]{URL;useContent},{NUMBER1}[/SteamIDCard]',
+	            '<a href="{URL}" target="_blank"><img src="http://steamsignature.com/card/0/{NUMBER1}.png"></a>'
         	);
 		}
 	);
